@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSE 121b | Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <nav>
+    <ul id="menu">
+      <li><a id="toggleMenu">&equiv;</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="w01-task.html">W1 Task</a></li>
+      <li><a href="w03-task.html">W3 Task</a></li>
+      <li><a href="w04-task.html">W4 Task</a></li>
+      <li><a href="w05-task.html">W5 Task</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
+    </ul>
+  </nav>
+  <main id="gridly">
+    <h1>W06-7: Project</h1>
+    <h2>Mars Rover Photos </h2>
+    <section>
+      <form>
+        <label for="marsRoverSol">Type in a day (1-1000): </label>
+        <input type="text" id="sol-day">
+      </form>   
+    <select id="filtered" title="Choose a data filter.">
+      <option value="" disabled selected>Filter Rover</option>
+      <option value="spirit">Spirit</option>
+      <option value="curiosity">Curiosity</option>
+      <!-- <option value="oppurtunity">Oppurtunity</option>
+      <option value="all">No Filter</option> -->
+    </select>
+    </section>
+    <div id="rover">
+    </div>
+  </main>
+
+
+  <footer>
+    &copy;<span id="year"></span> | W06-7 Project | CSE 121b
+  </footer>
+  <script src="scripts/main.js"></script>
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
+  <script src="scripts/project.js"></script>
+</body>
+
+</html>
