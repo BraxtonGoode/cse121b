@@ -79,10 +79,11 @@ const filterPhotos = (photos, selectedFilter) => {
             break;
     }
 
+// Sol variable initialization
 let sol = document.getElementById("sol-day").value;
 
-console.log(sol)
-    // Fetch and display photos based on the updated rover and sol
+
+// Fetch and display photos based on the updated rover and sol
 fetchPhotosForAllCameras(rover, sol)
     .then(photosList => {
         console.log('Mars photos:', photosList);
