@@ -20,7 +20,7 @@ async function fetchMarsPhotos(rover, sol) {
             throw new Error('Failed to fetch data');
         }
         const marsPhotos = await response.json();
-        console.log("check 1");
+        
         return marsPhotos.photos; // Return the photos array directly
     } catch (error) {
         console.error('Error fetching Mars photos:', error);
@@ -79,24 +79,46 @@ const filterPhotos = (photos, selectedFilter) => {
             break;
     }
 
+
 // Sol variable initialization
 let sol = document.getElementById("sol-day").value;
 
 
+
 // Fetch and display photos based on the updated rover and sol
+
 fetchPhotosForAllCameras(rover, sol)
     .then(photosList => {
         console.log('Mars photos:', photosList);
         marsPhotosList = photosList; // Store photos for filtering
-        marsPhotos(photosList); // Display photos based on the filter
+
+        // Clear existing photos
+        reset();
+
+        if (photosList.length === 0) {
+            // Display a message if no photos are available
+            const messageConatainer = document.getElementById("messageContainer");            
+            const messageElement = document.createElement("p");
+            messageElement.textContent = "No photos available for the selected day.";
+            messageConatainer.appendChild(messageElement);
+        } else {
+            // Display photos based on the filter
+            marsPhotos(photosList);
+        }
     })
     .catch(error => {
         console.error('Error:', error);
     });
+
 }
 
+
+
 // Usage of filterPhotos function
-document.getElementById("filtered").addEventListener("change", () => {
-    const selectedFilter = document.getElementById("filtered").value;
+document.getElementById("filterButton").addEventListener("click", () => {
+    messageContainer.innerHTML = "";
+    const selectedFilter = document.getElementById("filtered").value;    
     filterPhotos(marsPhotosList, selectedFilter); // Pass the selected filter option
+ 
 });
+

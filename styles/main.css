@@ -167,6 +167,11 @@ footer {
     bottom: 0;
 }
 
+p {
+    padding: 1rem;
+}
+
+
 /* Class Selectors */
 .active {
     border-bottom: 1px solid yellow;
@@ -279,6 +284,7 @@ footer {
     margin: .5rem;
 }
 
+
 /*Mars rover*/
 #rover {
     display: grid;
@@ -310,6 +316,16 @@ footer {
     width: 250px;
     height: auto;
     box-shadow: 0 0 30px #777;
+    margin: .5rem;
+}
+
+select {
+    margin: .5rem;
+    padding: .2rem;
+}
+
+button {
+    
     margin: .5rem;
 }
 

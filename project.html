@@ -27,7 +27,12 @@
   <main id="gridly">
     <h1>W06-7: Project</h1>
     <h2>Mars Rover Photos </h2>
-    <section>
+  <section>
+    <p id="instructions"> This Page is meant to show all the photos taken from the Spirit and Curiosity rover on Mars. <br>
+      All you have to do is type a number between 1 through 1000 and select a rover from the <br> drop down menu and then click on Apply Filter.
+      There are days that do not contain photos <br> for example day 500 of the Curiosity rover and when you apply it it will say down below <br> the button "No photos available for the selected day."
+    
+    </p>
       <form>
         <label for="marsRoverSol">Type in a day (1-1000): </label>
         <input type="text" id="sol-day">
@@ -38,7 +43,13 @@
       <option value="curiosity">Curiosity</option>
 
     </select>
+
+    <button id="filterButton"><strong>Apply Filter</strong> </button>
+    
+    <section>
+    <div id="messageContainer"></div> <!-- Container for displaying messages -->
     </section>
+  </section>
     <div id="rover">
     </div>
   </main>
